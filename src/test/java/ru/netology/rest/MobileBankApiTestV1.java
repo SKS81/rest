@@ -10,29 +10,20 @@ class MobileBankApiTestV1 {
     void shouldReturnDemoAccounts() {
         given()
                 .baseUri("http://localhost:9999/api/v1")
-                // Выполняемые действия
                 .when()
                 .get("/demo/accounts")
-                // Проверки
                 .then()
-                .statusCode(200);
+                .statusCode(200)
         ;
-
     }
     @Test
     void shouldCheckConnectionHeader() {
-        // Given - When - Then
-        // Предусловия
         given()
                 .baseUri("http://localhost:9999/api/v1")
-                // Выполняемые действия
                 .when()
                 .get("/demo/accounts")
-                // Проверки
                 .then()
                 .header("connection","keep-alive")
         ;
     }
 }
-
-
